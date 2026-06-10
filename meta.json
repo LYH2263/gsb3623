@@ -1,0 +1,27 @@
+{
+  "id": 3623,
+  "tech_type": "fullstack",
+  "prompt": "请开发一个功能完善的知识管理网站，具体技术栈要求如下：后端采用Django框架进行开发，前端使用Vue框架构建用户界面，初始数据库使用SQLite，并设计支持平滑迁移至MySQL数据库的架构。 \n\n功能需求详细说明： \n1. 主页面核心功能：实现交互式知识关系网络图可视化展示，支持节点拖拽、缩放和平移操作。 \n2. 搜索功能：实现基于关键词的知识节点搜索，搜索结果节点需自动居中高亮展示，并显示其直接关联关系。 \n3. 知识管理功能： \n- 提供知识节点的创建、编辑、删除功能，节点属性应包含标题、描述、类型、创建时间等 \n- 提供知识关系的添加、编辑、删除功能，关系属性应包含关系类型、权重、描述等 \n4. 文档管理功能： \n- 实现知识节点与文档的关联管理 \n- 点击知识节点可查看所有关联文档列表 \n- 集成Markdown在线编辑器，支持文档的创建、编辑、预览和保存 \n- 支持文档版本控制和历史记录查看 \n5. 用户系统：实现用户注册、登录、权限管理功能，区分管理员和普通用户权限 \n\n开发要求： \n1. 系统架构设计需考虑可扩展性和可维护性 \n2. 前后端通过RESTful API进行数据交互 \n3. 实现完整的数据验证和错误处理机制 \n4. 开发过程中需同步编写详细开发文档，包括： \n- 系统架构设计文档 \n- 数据库设计文档 \n- API接口文档 \n- 前端组件设计文档 \n- 部署文档 \n5. 编写单元测试和集成测试，确保代码质量 \n6. 实现数据库迁移方案，确保从SQLite平滑迁移至MySQL \n\n请基于以上需求进行详细分析和任务拆解，制定开发计划后开始实施。",
+  "framework": "modern_frontend_framework",
+  "backend": "Django",
+  "database": "SQLite,MySQL",
+  "platform": "",
+  "scores": {
+    "clarity": 4,
+    "complexity": 5.0,
+    "verifiability": 1.0,
+    "manual_verify": 1,
+    "automatable": 1,
+    "total": 3.05,
+    "grade": "C",
+    "reproducibility": 1,
+    "type_weight": 3.25,
+    "weighted_total": 9.91,
+    "complexity_rule": 5.0,
+    "complexity_llm": 5.0,
+    "feasibility": 4,
+    "feasibility_confidence": 0.74
+  },
+  "impl_score": 0,
+  "selection_review": null
+}

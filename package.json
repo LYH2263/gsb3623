@@ -1,0 +1,21 @@
+{
+  "name": "knowledge-graph-manager-workspace",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "setup": "pnpm -r setup",
+    "dev": "concurrently -k -n BACKEND,FRONTEND \"pnpm --filter backend dev\" \"pnpm --filter frontend dev\"",
+    "lint": "pnpm -r lint",
+    "test": "pnpm --filter backend test && pnpm --filter frontend test && pnpm test:e2e",
+    "test:e2e": "start-server-and-test \"concurrently -k -n BACKEND,FRONTEND \\\"pnpm --filter backend dev:test\\\" \\\"pnpm --filter frontend dev:test\\\"\" \"http://127.0.0.1:8000/api/health/|http://127.0.0.1:4173\" \"pnpm --filter e2e test\"",
+    "build": "pnpm --filter backend build && pnpm --filter frontend build",
+    "docker:up": "docker compose up -d --build",
+    "docker:down": "docker compose down -v",
+    "migrate:mysql": "pnpm --filter backend migrate:mysql"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "start-server-and-test": "^2.1.1",
+    "wait-on": "^8.0.3"
+  }
+}

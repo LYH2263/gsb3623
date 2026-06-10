@@ -1,0 +1,43 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: docker/backend.Dockerfile
+    container_name: kgm-backend
+    ports:
+      - "8000:8000"
+    environment:
+      DJANGO_DEBUG: "0"
+      DJANGO_ALLOWED_HOSTS: "127.0.0.1,localhost,backend"
+      CORS_ALLOWED_ORIGINS: "http://localhost:4173,http://127.0.0.1:4173"
+      KGM_DB_ENGINE: "sqlite"
+    volumes:
+      - ./apps/backend/db.sqlite3:/app/db.sqlite3
+
+  frontend:
+    build:
+      context: .
+      dockerfile: docker/frontend.Dockerfile
+    container_name: kgm-frontend
+    depends_on:
+      - backend
+    ports:
+      - "4173:80"
+
+  mysql:
+    image: mysql:8.4
+    container_name: kgm-mysql
+    profiles: ["mysql"]
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root_pwd
+      MYSQL_DATABASE: knowledge_graph
+      MYSQL_USER: kgm
+      MYSQL_PASSWORD: kgm_pwd
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:

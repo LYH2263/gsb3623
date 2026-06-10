@@ -1,0 +1,18 @@
+:root {
+  --bg: #f6f8fc;
+  --surface: #ffffff;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --brand: #1d4ed8;
+  --brand-strong: #1e3a8a;
+  --danger: #dc2626;
+  --border: #dbe2ea;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --space-1: 8px;
+  --space-2: 12px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.1);
+}

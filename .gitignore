@@ -1,0 +1,20 @@
+node_modules
+.pnpm-store
+__pycache__
+*.pyc
+*.sqlite3
+.pytest_cache
+.ruff_cache
+apps/backend/.venv
+apps/frontend/dist
+apps/frontend/node_modules
+e2e/node_modules
+playwright-report
+test-results
+.env
+.env.*
+.DS_Store
+
+# 对话记录与题目文件
+对话/
+题目.md

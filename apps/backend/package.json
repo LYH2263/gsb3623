@@ -1,0 +1,14 @@
+{
+  "name": "backend",
+  "private": true,
+  "scripts": {
+    "setup": "python3 -m venv .venv && .venv/bin/pip install -r requirements.txt",
+    "migrate": ".venv/bin/python manage.py migrate",
+    "dev": ".venv/bin/python manage.py migrate && .venv/bin/python manage.py runserver 127.0.0.1:8000",
+    "dev:test": ".venv/bin/python manage.py migrate && .venv/bin/python manage.py seed_e2e_data --silent && .venv/bin/python manage.py runserver 127.0.0.1:8000",
+    "lint": ".venv/bin/python -m ruff check .",
+    "test": ".venv/bin/python -m pytest",
+    "build": ".venv/bin/python manage.py check && .venv/bin/python manage.py makemigrations --check --dry-run",
+    "migrate:mysql": ".venv/bin/python scripts/migrate_sqlite_to_mysql.py"
+  }
+}
