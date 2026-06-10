@@ -33,7 +33,7 @@ jobs:
       - name: Install dependencies
         run: |
           pnpm install --frozen-lockfile
-          pnpm --filter backend setup
+          pnpm --filter backend run setup
 
       - name: Lint
         run: pnpm lint
