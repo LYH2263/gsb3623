@@ -3,14 +3,10 @@ name: CI
 on:
   push:
     branches:
-      - main
-      - master
-      - develop
+      - "**"
   pull_request:
     branches:
-      - main
-      - master
-      - develop
+      - "**"
 
 jobs:
   quality-check:
@@ -63,8 +59,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pnpm install
-          pnpm --filter backend setup
+          pnpm install --frozen-lockfile
+          pnpm --filter backend run setup
 
       - name: Lint
         run: pnpm lint
